@@ -187,3 +187,43 @@ GET /users/1
   "error": "Bad Request"
 }
 ```
+
+### Delete a User
+
+- **Method**: `DELETE`
+- **Endpoint**: `/users/:id`
+- **Description**: Deletes a user based on the provided user ID.
+- **Path Parameters**:
+  - `id` (required): The ID of the user to delete. Must be an integer.
+- **Response**:
+  - **204 No Content**: If the deletion was successful.
+  - **404 Not Found**: If the user with the specified ID does not exist.
+
+#### Example Request
+
+```bash
+DELETE /users/1
+```
+
+#### Example Responses
+
+**Response for successful deletion**
+
+```json
+{
+  "id": 1,
+  "name": "David",
+  "email": "david@gmail.com",
+  "role": "ADMIN"
+}
+```
+
+**Response for an invalid user ID (not found)**
+
+```json
+{
+  "statusCode": 404,
+  "message": "User not found",
+  "error": "Not Found"
+}
+```

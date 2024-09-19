@@ -1,4 +1,6 @@
 import { Injectable } from '@nestjs/common';
+import { CreateUserDto } from './dto/create-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
 
 @Injectable()
 export class UsersService {
@@ -34,6 +36,7 @@ export class UsersService {
       role: 'ADMIN',
     },
   ];
+
   findAllUsers(role?: 'ADMIN' | 'STUDENT') {
     if (role) {
       return this.users.filter((user) => user.role === role);
@@ -47,7 +50,7 @@ export class UsersService {
     return user;
   }
 
-  createUser(user: { name: string; email: string; role: 'STUDENT' | 'ADMIN' }) {
+  createUser(user: CreateUserDto) {
     // generate ID
     const usersByHighestId = [...this.users].sort((a, b) => b.id - a.id);
 
@@ -60,10 +63,7 @@ export class UsersService {
     this.users.push(newUser);
   }
 
-  updateUser(
-    id: number,
-    userDetails: { name?: string; email?: string; role?: 'STUDENT' | 'ADMIN' },
-  ) {
+  updateUser(id: number, userDetails: UpdateUserDto) {
     this.users = this.users.map((user) => {
       if (user.id === id) {
         return { ...user, ...userDetails };

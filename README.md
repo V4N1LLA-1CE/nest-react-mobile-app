@@ -12,9 +12,8 @@ This repository is an experimental project to explore the integration of **React
 ### Prerequisites
 
 - **Node.js** (v16 or later)
-- **npm** or **yarn** (for package management)
+- **npx** + **npm** (for package management)
 - **NestJS CLI** (for backend development)
-- **React Native CLI** or **Expo CLI** (for mobile development)
 
 ### Installation
 
@@ -51,7 +50,7 @@ This repository is an experimental project to explore the integration of **React
 2. **Start the NestJS server**:
 
    ```bash
-   npm run start
+   npm run start:dev
    ```
 
 3. The server will start on `http://localhost:3000`.
@@ -70,7 +69,11 @@ This repository is an experimental project to explore the integration of **React
    npx expo start
    ```
 
-3. Follow the instructions to run the app on a simulator or a real device.
+3. Follow the instructions to run the app on a simulator or a real device (Expo Go App)
+
+## Useful Documentation
+
+- `https://docs.expo.dev/get-started/create-a-project/`
 
 ## License
 

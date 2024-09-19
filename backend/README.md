@@ -73,3 +73,30 @@ GET /users/1
   "role": "STUDENT"
 }
 ```
+
+### Create a User
+
+- **Method**: `POST`
+- **Endpoint**: `/users`
+- **Description**: Creates a new user using the POST method.
+- **Request Body**:
+  - **Content-Type**: `application/json`
+  - **Body**: An object that conforms to the `CreateUserDto` schema.
+
+#### CreateUserDto Schema
+
+- **name**: string (required) - The name of the user.
+- **email**: string (required) - The email address of the user.
+- **role**: 'ADMIN' | 'STUDENT' (required) - The role of the user. Possible values are `ADMIN` or `STUDENT`.
+
+#### Example Request
+
+**Request Body:**
+
+```json
+{
+  "name": "new student",
+  "email": "new@example.com",
+  "role": "STUDENT"
+}
+```
